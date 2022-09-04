@@ -1,11 +1,12 @@
+#The script is used for plot Figure 2D
+
 import glob
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FormatStrFormatter
 import pickle
 
-#####load data and MSM weights######
-
+#Load data and MSM weights
 WT = pickle.load(open('procA3.3WT-four-dist-sub-helical.pkl','rb'))
 WT_weights = pickle.load(open('MSM-procA3.3WT_cluster_150_ticdim_10-weights.pkl','rb'))
 WT = np.concatenate(WT)
@@ -21,7 +22,8 @@ MT2_weights = pickle.load(open('MSM-procA3.3MT2_cluster_100_ticdim_6-weights.pkl
 MT2 = np.concatenate(MT2)
 MT2_weights = np.concatenate(MT2_weights)
 
-
+#Define One dimensional histogram plot
+#Two paramter: the index of feature to be plotted; the number of bins
 def plot_hist(feat, bins_):
     nSD, binsSD = np.histogram(WT[:,feat], bins=bins_, density=True,weights = WT_weights)
     nSD1, binsSD1 = np.histogram(MT1[:,feat], bins=bins_, density=True, weights = MT1_weights)
@@ -48,5 +50,6 @@ def plot_hist(feat, bins_):
     plt.tight_layout()
     plt.savefig('ProcA3.3_prob_helical_content.png',dpi=500)
 
-plot_hist(4, 100)
+#Plot helical content
+plot_hist(4, 100)   #in the feature matrix, 4th column is helical content; bins= 100
 
