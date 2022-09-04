@@ -23,7 +23,6 @@ MT1_totdist = np.concatenate(MT1_totdist)
 MT1_weights = pickle.load(open('./procA33_MT1_2/analysis/MSM-procA3.3MT1_cluster_150_ticdim_8-weights.pkl','rb'))
 MT1_weights = np.concatenate(MT1_weights)
 
-
 MT2_totdist = []
 for file in sorted(glob.glob('./procA33_MT2_16/analysis/*all-dist-per-traj.npy')):
     distI = np.load(file)
