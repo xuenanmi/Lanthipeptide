@@ -1,4 +1,4 @@
-#The script is used for plot Figure 2D
+#The script is used for plotting Figure 2D
 
 import glob
 import matplotlib.pyplot as plt
