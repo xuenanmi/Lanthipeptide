@@ -38,11 +38,8 @@ def plot_hist(feat, bins_, title_, xlabel_, xticks_, yticks_):
     axs.plot(binsSD1[0:-1], nSD1, linewidth=3, c='blue')
     axs.legend(['Mutant1-Unmodified', 'Mutant1-Dehydrated'],loc='upper right',fontsize=20)
     
-    #axs.set_xticks(np.arange(0,int(max(binsSD[0:-1]))+1,5))
-    #axs.set_xticklabels(np.arange(0,int(max(binsSD[0:-1]))+1,5))
     axs.set_xticks(xticks_)
     axs.set_xticklabels(xticks_)
-
     axs.set_yticks(yticks_)
     axs.set_yticklabels(yticks_)
     axs.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
