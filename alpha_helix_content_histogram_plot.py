@@ -4,21 +4,20 @@ import numpy as np
 from matplotlib.ticker import FormatStrFormatter
 import pickle
 
-WT = pickle.load(open('/home/xmi4/RippsProject/procA33_WT/plot-res/subset-a-helix/procA3.3WT-four-dist-sub-helical.pkl','rb'))
-WT_weights = pickle.load(open('/home/xmi4/RippsProject/procA33_WT/analysis/MSM-procA3.3WT_cluster_150_ticdim_10-weights.pkl','rb'))
-#WT = pickle.load(open('/home/xmi4/RippsProject/procA33_WT/plot-res/procA3.3WT-four-dist-helical.pkl','rb'))
+#####load data and MSM weights######
+
+WT = pickle.load(open('procA3.3WT-four-dist-sub-helical.pkl','rb'))
+WT_weights = pickle.load(open('MSM-procA3.3WT_cluster_150_ticdim_10-weights.pkl','rb'))
 WT = np.concatenate(WT)
 WT_weights = np.concatenate(WT_weights)
 
-MT1 = pickle.load(open('/home/xmi4/RippsProject/procA33_MT1_2/plot-res/sub-a-helix/procA3.3MT1_2-four-dist-sub-helical.pkl','rb'))
-MT1_weights = pickle.load(open('/home/xmi4/RippsProject/procA33_MT1_2/analysis/MSM-procA3.3MT1_cluster_150_ticdim_8-weights.pkl','rb'))
-#MT1 = pickle.load(open('/home/xmi4/RippsProject/procA33_MT1_2/plot-res/procA3.3MT1_2-four-dist-helical.pkl','rb'))
+MT1 = pickle.load(open('procA3.3MT1_2-four-dist-sub-helical.pkl','rb'))
+MT1_weights = pickle.load(open('MSM-procA3.3MT1_cluster_150_ticdim_8-weights.pkl','rb'))
 MT1 = np.concatenate(MT1)
 MT1_weights = np.concatenate(MT1_weights)
 
-MT2 = pickle.load(open('/home/xmi4/RippsProject/procA33_MT2_16/plot-res/sub-a-helix/procA3.3MT2_16-four-dist-sub-helical.pkl','rb'))
-MT2_weights = pickle.load(open('/home/xmi4/RippsProject/procA33_MT2_16/analysis/MSM-procA3.3MT2_cluster_100_ticdim_6-weights.pkl','rb'))
-#MT2 = pickle.load(open('/home/xmi4/RippsProject/procA33_MT2_16/plot-res/procA3.3MT2_16-four-dist-helical.pkl','rb'))
+MT2 = pickle.load(open('procA3.3MT2_16-four-dist-sub-helical.pkl','rb'))
+MT2_weights = pickle.load(open('MSM-procA3.3MT2_cluster_100_ticdim_6-weights.pkl','rb'))
 MT2 = np.concatenate(MT2)
 MT2_weights = np.concatenate(MT2_weights)
 
@@ -34,20 +33,11 @@ def plot_hist(feat, bins_):
     axs.plot(binsSD1[0:-1], nSD1, linewidth=3, c='blue')
     axs.plot(binsSD2[0:-1], nSD2, linewidth=3, c='orange')
     axs.legend(['Wild Type', 'Mutant1', 'Mutant2'],loc='upper right', fontsize = 18)
-    
-    #axs.set_xticks(np.arange(int(min(binsSD[0:-1])),int(max(binsSD[0:-1]))+1,1))
-    #axs.set_xticklabels(np.arange(int(min(binsSD[0:-1])),int(max(binsSD[0:-1]))+1,1))
-    #axs.set_xticks(np.arange(0,31,5))
-    #axs.set_xticklabels(np.arange(0,31,5))
 
     axs.set_xticks([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
     axs.set_xticklabels([0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0])
-    #axs.xaxis.set_major_formatter(FormatStrFormatter('%.1f'))
-    #axs.tick_params(width=3,length=5, labelsize=18)
-    
     axs.set_yticks([0.00, 1.00, 2.00, 3.00, 4.00, 5.00, 6.00])
     axs.set_yticklabels([0.00, 1.00, 2.00, 3.00, 4.00, 5.00, 6.00])
-    #axs.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
     axs.tick_params(width=3,length=5, labelsize=18)
     
     plt.xlabel('Helical Content', fontsize=28)
