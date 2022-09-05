@@ -5,7 +5,7 @@ import glob
 import numpy as np
 import pickle
 import pyemma
-import seaborn as sns
+
 
 totdist = []
 for file in glob.glob('*all-dist-per-traj.npy'):
