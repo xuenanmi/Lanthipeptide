@@ -45,7 +45,6 @@ def plot_hist(feat, bins_):
     plt.ylabel('Probability Density', fontsize=28)
     plt.rc('xtick', labelsize=24)
     plt.rc('ytick', labelsize=24)
-    
     plt.tight_layout()
     plt.savefig('ProcA3.3_prob_helical_content.png',dpi=500)
 
