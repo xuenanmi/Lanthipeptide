@@ -1,5 +1,4 @@
 #The script is used for plotting Figure 2D
-
 import glob
 import matplotlib.pyplot as plt
 import numpy as np
